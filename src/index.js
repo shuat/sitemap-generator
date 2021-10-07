@@ -55,8 +55,8 @@ module.exports = function SitemapGenerator(uri, opts) {
   // only resolve if sitemap path is truthy (a string preferably)
   const sitemapPath = options.filepath && path.resolve(options.filepath);
 
-  // we don't care about invalid certs
-  process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
+  // we don't care about invalid certs - turn off as is unsafe
+  //process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
 
   const crawler = createCrawler(parsedUrl, options);
 
